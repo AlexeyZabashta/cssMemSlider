@@ -16,6 +16,7 @@ main{
     margin:2em auto;        
 }
 span{
+
     font-size: 2em;
 }
 input{
@@ -74,7 +75,7 @@ input{
     }
   }
   .slide_text{
-      margin-top:1.5em;    
+      margin-top:-2.5em;    
 }
 .carousel label {
     cursor: pointer;
@@ -149,9 +150,13 @@ span {
 }
 .carousel{
     display:flex;    
-    position: relative;           
+    position: relative;
+    margin-top:0;            
     width:50%;
     left:11.5%;    
+}
+.slide_text{
+  margin-top:0;    
 }
 
 }
