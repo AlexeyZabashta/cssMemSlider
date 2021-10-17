@@ -1,0 +1,164 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: lightslategray;
+    font-family: 'Roboto', sans-serif;    
+}
+main{
+    width:70%;
+    margin:2em auto;        
+}
+span{
+
+    font-size: 2em;
+}
+input{
+    display:none;
+}
+
+
+.wrapper_slider{    
+   width: 100%;
+}
+.wrapper_slider img{
+    border-radius: 0.5em;
+    width:100%;
+    max-height: 33em;  
+}
+.slide{
+    display:none;
+}
+#active1:checked ~ .wrapper_slider>.active1,
+#active2:checked ~ .wrapper_slider>.active2,
+#active3:checked ~ .wrapper_slider>.active3,
+#active4:checked ~ .wrapper_slider>.active4,
+#active5:checked ~ .wrapper_slider>.active5{
+    display:block;
+}
+#active1:checked ~ .slide_text>.active1,
+#active2:checked ~ .slide_text>.active2,
+#active3:checked ~ .slide_text>.active3,
+#active4:checked ~ .slide_text>.active4,
+#active5:checked ~ .slide_text>.active5{
+    display:block;
+}
+.slide{
+    animation-name: slide;
+    -webkit-animation-name: slide;  
+  
+    animation-duration: 1.5s; 
+    -webkit-animation-duration: 1.5s;
+  
+    animation-timing-function: ease-out;    
+    -webkit-animation-timing-function: ease-out;
+  
+    visibility: visible !important; 
+  }
+  @keyframes slide {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(10%, 0, 0);
+      transform: translate3d(10%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  .slide_text{
+      margin-top:-2.5em;    
+}
+.carousel label {
+    cursor: pointer;
+    display: inline-block;
+    height: 1em;
+    margin: 1em 1em 1em 1em;
+    position: relative;
+    width: 1em;
+    border-radius: 50%;
+    background: rgb(96, 152, 216);
+    border: 0.3em solid rgb(145, 177, 214);
+    transition-property: border, background;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+  }
+  
+.carousel label:hover {
+    background: rgb(221, 207, 207);
+    border: 0.3em solid rgb(221, 207, 207);
+    transition-property: border, background;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+  }
+
+.carousel label:active{
+    background: rgb(95, 87, 87);
+    border: 0.3em solid rgb(216, 216, 216);
+    transition-property: border, background;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+}
+.carousel label:focus {
+    border: 0.3em solid rgb(221, 221, 207);
+  }
+  
+  #active1:checked ~ .carousel label:nth-of-type(1),
+  #active2:checked ~ .carousel label:nth-of-type(2),
+  #active3:checked ~ .carousel label:nth-of-type(3),
+  #active4:checked ~ .carousel label:nth-of-type(4),
+  #active5:checked ~ .carousel label:nth-of-type(5) {
+    background-color: transparent;
+  }
+  
+.carousel label:after {
+    border: 0.1em solid transparent;  
+    content: ' ';
+    display: block;
+    height: 2.8em;
+    width: 2.8em;
+    left: -1.2em;
+    position: relative;
+    top: -1.2em;
+    border-radius: 50%;
+  }
+
+.carousel{
+    display:flex;    
+    position: relative; 
+    margin-top:1em;       
+    width:30%;
+    left:75%;    
+}
+
+
+@media all and (max-width: 420px){
+body{
+    font-size:0.9em;
+}
+
+span {	
+    font-size: 1em;
+}
+.carousel{
+    display:flex;    
+    position: relative;
+    margin-top:0;            
+    width:50%;
+    left:11.5%;    
+}
+.slide_text{
+  margin-top:0;    
+}
+
+}
+
+
