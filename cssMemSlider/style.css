@@ -8,7 +8,8 @@
 }
 
 body {
-	background-color: darkgrey;    
+	background-color: lightslategray;
+    font-family: 'Roboto', sans-serif;    
 }
 main{
     width:70%;
@@ -20,29 +21,8 @@ span{
 input{
     display:none;
 }
-#active1,
-#active2,
-#active3,
-#active4,
-#active5{
-    position:relative;
-    top:44.5em;
-}
-#active1{
-    left:87%;
-}
-#active2{
-    left:88%;
-}
-#active3{
-    left:89%;
-}
-#active4{
-    left:90%;
-}
-#active5{
-    left:91%;
-}
+
+
 .wrapper_slider{    
    width: 100%;
 }
@@ -96,221 +76,84 @@ input{
   .slide_text{
       margin-top:1.5em;    
 }
+.carousel label {
+    cursor: pointer;
+    display: inline-block;
+    height: 1em;
+    margin: 1em 1em 1em 1em;
+    position: relative;
+    width: 1em;
+    border-radius: 50%;
+    background: rgb(96, 152, 216);
+    border: 0.3em solid rgb(145, 177, 214);
+    transition-property: border, background;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+  }
+  
+.carousel label:hover {
+    background: rgb(221, 207, 207);
+    border: 0.3em solid rgb(221, 207, 207);
+    transition-property: border, background;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+  }
 
-
-label {
-	cursor: pointer;
-	display: inline-block;
-	height: 12px;
-	margin: 2em 0.5em 2em 0;
-	position: relative;
-	width: 12px;
-	-webkit-border-radius: 50%;	
-	border-radius: 50%;
-	-webkit-transition: background ease-in-out .5s;	
-	transition: background ease-in-out .5s;
-    border: 2px solid transparent;
-    color: transparent;
+.carousel label:active{
+    background: rgb(95, 87, 87);
+    border: 0.3em solid rgb(216, 216, 216);
+    transition-property: border, background;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-in-out;
+}
+.carousel label:focus {
+    border: 0.3em solid rgb(221, 221, 207);
+  }
+  
+  #active1:checked ~ .carousel label:nth-of-type(1),
+  #active2:checked ~ .carousel label:nth-of-type(2),
+  #active3:checked ~ .carousel label:nth-of-type(3),
+  #active4:checked ~ .carousel label:nth-of-type(4),
+  #active5:checked ~ .carousel label:nth-of-type(5) {
     background-color: transparent;
-}
-
-label:hover::after, 
-#active1:checked ~ .carousel label:nth-of-type(1),
-#active2:checked ~ .carousel label:nth-of-type(2),
-#active3:checked ~ .carousel label:nth-of-type(3),
-#active4:checked ~ .carousel label:nth-of-type(4),
-#active5:checked ~ .carousel label:nth-of-type(5) {
-    position: relative;    
-	border: 2px solid white;
-	height: 12px;	
-	width: 12px;
-      
-}
-
-
-label:after {
+  }
+  
+.carousel label:after {
+    border: 0.1em solid transparent;  
+    content: ' ';
+    display: block;
+    height: 2.8em;
+    width: 2.8em;
+    left: -1.2em;
     position: relative;
-	border: 2px solid lightblue;
-	content: " ";
-	display: block;
-	height: 12px;	
-	width: 12px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-o-border-radius: 50%;
-	border-radius: 50%;
-}
+    top: -1.2em;
+    border-radius: 50%;
+  }
+
 .carousel{
-    position: relative;
-    width:20%;
-    left:80%;
-    overflow: hidden;
+    display:flex;    
+    position: relative; 
+    margin-top:1em;       
+    width:30%;
+    left:75%;    
 }
 
 
 @media all and (max-width: 420px){
-#active1,
-#active2,
-#active3,
-#active4,
-#active5{
-    position:relative;
-    top:14em;
+body{
+    font-size:0.9em;
 }
-#active1{
-    left:35%;
-}
-#active2{
-    left:36%;
-}
-#active3{
-    left:37%;
-}
-#active4{
-    left:38%;
-}
-#active5{
-    left:39%;
-} 
-.slide_text{
-    margin-top:2.5em;    
-} 
+
 span {	
-    font-size: 0.8em;
+    font-size: 1em;
 }
+.carousel{
+    display:flex;    
+    position: relative;           
+    width:50%;
+    left:11%;    
 }
 
-/*<main>
-        <div class="wrapper_slider">
-             <div class="slide active1"><img src="boromir.jpg"> </div>
-             <div class="slide active2"><img src="facepalm.jpg"> </div>
-             <div class="slide active3"><img src="pistols.jpg"> </div>
-             <div class="slide active4"><img src="presentation.jpg"> </div>
-             <div class="slide active5"><img src="spanch.jpg"> </div>
-        </div> 
-        <div class="lower-section">
-            <div class="carousel">
-                <input type="radio" name="point" id="active1" checked>
-                <input type="radio" name="point" id="active2">
-                <input type="radio" name="point" id="active3">
-                <input type="radio" name="point" id="active4">
-                <input type="radio" name="point" id="active5">
-                <label for="active1"></label>
-                <label for="active2"></label>
-                <label for="active3"></label>
-                <label for="active4"></label>
-                <label for="active5"></label>
-            </div>
-            <div class="slide_text">
-                <span class="text active">1</span>
-                <span class="text">2</span>
-                <span class="text">3</span>
-                <span class="text">4</span>
-                <span class="text">5</span>
-            </div>
-                                 
-        </div>
-        </main>*/
-
-
-
-/** {
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
 }
 
 
-body{    
-    background-color:grey;
-}
-.main{
-    width:90%;
-    margin:2em auto;
-}
-.wrapper_slider{
-    max-width:1296px;    
-}
-img{
-    width:100%;
-    height: 50vh;
-}
-.slide{
-    display:none;
-    -webkit-transform: scale(1.5);	
-	transform: scale(1.5);
-	-webkit-transition: transform ease-in-out .5s, opacity ease-in-out .5s;	
-	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
-}
-.text{
-    display:none;
-}
-.text.active{
-    display:block; 
-}
-
-#active1:checked ~ .wrapper_slider > .slide.active1,
-#active2:checked ~ .wrapper_slider > .slide.active2,
-#active3:checked ~ .wrapper_slider > .slide.active3,
-#active4:checked ~ .wrapper_slider > .slide.active4,
-#active5:checked ~ .wrapper_slider > .slide.active5 {
-    display: block;
-	opacity: 1;
-	z-index: 1;
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-o-transform: scale(1);
-	transform: scale(1);
-}
-
-label:hover, 
-#active1:checked ~ .carousel label:nth-of-type(1),
-#active2:checked ~ .carousel label:nth-of-type(2),
-#active3:checked ~ .carousel label:nth-of-type(3),
-#active4:checked ~ .carousel label:nth-of-type(4),
-#active5:checked ~ .carousel label:nth-of-type(5) {    
-	background: #ddd;
-}
-
-label:after {
-    position: absolute;
-	border: 2px solid #ddd;
-	content: " ";	
-	height: 12px;
-	left: -4px;	
-	top: -4px;
-	width: 12px;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-o-border-radius: 50%;
-	border-radius: 50%;
-}*/
-
-/*.slide{
-    animation-name: slide;
-    -webkit-animation-name: slide;  
-  
-    animation-duration: 1.5s; 
-    -webkit-animation-duration: 1.5s;
-  
-    animation-timing-function: ease-out;    
-    -webkit-animation-timing-function: ease-out;
-  
-    visibility: visible !important; 
-  }
-  @keyframes slide {
-    from {
-      opacity: 0;
-      -webkit-transform: translate3d(50%, 0, 0);
-      transform: translate3d(50%, 0, 0);
-    }
-  
-    to {
-      opacity: 1;
-      -webkit-transform: none;
-      transform: none;
-    }
-  }  */
